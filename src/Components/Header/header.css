@@ -1,0 +1,80 @@
+.Header-top .bg-dark {
+   
+    background: #fff!important;
+    padding: 30px;
+}
+.Header-top .navbar-dark .navbar-nav .nav-link {
+    color: #4f5152d1;
+    font-size: 17px!important;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.me-auto.navbar-nav h3 {
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.Header-top .navbar-dark .navbar-nav .nav-link svg {
+    margin-right: 14px;
+    vertical-align: middle;
+    color: #0d6efdb8;
+    font-size: 22px;
+}
+.Header-bottom {
+    background: #b7c0c6;
+    padding: 0px 10px;
+}
+.Header-bottom ul{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.Header-bottom ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    vertical-align: middle;
+}
+.Header-bottom input{
+    min-width: 500px!important;
+}
+.Header-bottom ul li p {
+    font-size: 18px;
+}
+.Header-bottom ul li p b{
+   text-transform: capitalize;
+}
+.Header-bottom .btn-outline-success {
+    color: #333!important;
+    border-color: #fff;
+    background: #fff!important;
+    border-radius: 0;
+}
+.Header-bottom .form-control.is-valid, .was-validated .form-control:valid{
+    color: #333!important;
+    border-color: #fff;
+    background: #fff!important;
+    border-radius: 0;
+}
+.Header-bottom .form-control.is-valid::placeholder{
+    color: #333!important;
+}
+.Header-bottom a.btn.btn-warning.btn-md {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0;
+    padding: 10px 60px;
+    background-color: #eb7600;
+    border-color: #eb7600;
+}
+.Header-bottom a.btn.btn-warning.btn-md span svg {
+    width: 20px;
+    height: 20px;
+    background: white;
+    color: #eb7600;
+    border-radius: 25px;
+    margin-left: 30px;
+}
