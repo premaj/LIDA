@@ -2,17 +2,12 @@ import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { Button, Col, Row } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
   faPhoneAlt,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
-import MyDashboard from "../Dashboard/myDashboard";
 import "./dashboard.css";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
@@ -45,7 +40,7 @@ function Alerts() {
       <h4>Documents</h4>
       <Row className="border-bottom">        
         <Col md={8}>
-          <p>Custome to submit medical docs for Quote #654321</p>
+          <p>Custome to submit medical docs for Quote #!654321</p>
         </Col>
         <Col>
           <Button className="track-btn">Track</Button>
@@ -63,7 +58,7 @@ function Alerts() {
         </Col>
       </Row>
 
-      <a href="#">More Alerts</a>
+      <a href="#!">More Alerts</a>
     </div>
   );
 }

@@ -1,18 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Col, Container, Row, Form, Button, Tabs, Tab } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
-  faPhoneAlt,
-  faSearch,
+  faPhoneAlt
 } from "@fortawesome/free-solid-svg-icons";
 import Alerts from "./alerts";
 import Claims from "./claims";

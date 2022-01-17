@@ -1,50 +1,46 @@
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
   faPhoneAlt,
-  faSearch,
-  faArrowRight,
+  faArrowRight
 } from "@fortawesome/free-solid-svg-icons";
-import MyDashboard from "../Dashboard/myDashboard";
 import "./dashboard.css";
-library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt,faArrowRight);
+library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt, faArrowRight);
 
 function MyTools() {
   return (
     <div className="dashboard-alert">
       <h3 className="widget-heading">
         My Tools <span>...</span>
-      </h3>      
-      <Row className="border-bottom">        
+      </h3>
+      <Row className="border-bottom">
         <Col md={12}>
-           <h4 className="mytools"><a href ='#'>Need Analysis <span><FontAwesomeIcon icon={faArrowRight}/></span></a></h4>
+          <h4 className="mytools"><a href='#!'>Need Analysis <span><FontAwesomeIcon icon={faArrowRight} /></span></a></h4>
         </Col>
       </Row>
-      <Row className="border-bottom">        
+      <Row className="border-bottom">
         <Col md={12}>
-           <h4 className="mytools"><a href ='#'>Retirement Calculator <span><FontAwesomeIcon icon={faArrowRight}/></span></a></h4>
+          <h4 className="mytools"><a href='#!'>Retirement Calculator <span><FontAwesomeIcon icon={faArrowRight} /></span></a></h4>
         </Col>
       </Row>
-      <Row className="border-bottom">        
+      <Row className="border-bottom">
         <Col md={12}>
-           <h4 className="mytools"><a href ='#'>Life Insurence Calculator <span><FontAwesomeIcon icon={faArrowRight}/></span></a></h4>
+          <h4 className="mytools"><a href='#!'>Life Insurence Calculator <span><FontAwesomeIcon icon={faArrowRight} /></span></a></h4>
         </Col>
       </Row>
-      <Row className="border-bottom">        
+      <Row className="border-bottom">
         <Col md={12}>
-           <h4 className="mytools"><a href ='#'>Plan Comparison <span><FontAwesomeIcon icon={faArrowRight}/></span></a></h4>
+          <h4 className="mytools"><a href='#!'>Plan Comparison <span><FontAwesomeIcon icon={faArrowRight} /></span></a></h4>
         </Col>
       </Row>
 
-      <a href="#">More Tools</a>
+      <a href="#!">More Tools</a>
     </div>
   );
 }

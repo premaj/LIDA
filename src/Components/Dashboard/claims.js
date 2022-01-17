@@ -1,16 +1,12 @@
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { Button, Col, Row, Form } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  Col, Row, Form } from "react-bootstrap";
 import {
-  faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
   faPhoneAlt,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import "./dashboard.css";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
@@ -56,7 +52,7 @@ function Claims() {
         </Col>
       </Row>
 
-      {/* <a href="#">More Alerts</a> */}
+      {/* <a href="#!">More Alerts</a> */}
     </div>
   );
 }
