@@ -254,3 +254,11 @@ h4.mytools a span svg {
     padding: 5px;
     color: #fff;
 }
+/* .dashboard-list li.nav-item{
+    position: relative;
+}
+.dashboard-list li.nav-item:first-child button{
+    position: absolute;
+    background: url('../../assets/images/Dashboard.png');
+    background-repeat: no-repeat;
+} */
