@@ -42,7 +42,7 @@ function Header() {
                 className="d-inline-block align-center me-5"
                 alt="Agent Dashboard"
               />
-              <h3 className="d-inline-block align-top">AGENT DASHBOARD</h3>
+              <h3 className="d-inline-block align-top">AGENT DASHBOARD.</h3>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
