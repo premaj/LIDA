@@ -1,24 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Col, Container, Row, Form, Button, Tabs, Tab } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import {
-  faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
   faPhoneAlt,
-  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import Alerts from "./alerts";
 import Claims from "./claims";
 import MyTools from "./myTools";
 import MyReports from "./myReports";
-import ClientTable from './clientTable';
+import ClientTable from "./clientTable";
+import MyIncentives from "./myIncentives";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
@@ -83,9 +80,7 @@ function MyDashboard() {
             {/* My incentives and My commisions */}
             <Row>
               <Col>
-                <div className="dashboard-widget">
-                  <h3 className="widget-heading">My Incentives</h3>
-                </div>
+                <MyIncentives />
               </Col>
               <Col>
                 <div className="dashboard-widget">
@@ -98,14 +93,15 @@ function MyDashboard() {
             <Row>
               <Col>
                 <div className="dashboard-widget">
-                  <h3 className="widget-heading">My Workspace <span>...</span></h3>
+                  <h3 className="widget-heading">
+                    My Workspace <span>...</span>
+                  </h3>
                 </div>
                 <Row>
                   <Col>
-                  <ClientTable/>
+                    <ClientTable />
                   </Col>
                 </Row>
-                
               </Col>
             </Row>
           </Col>

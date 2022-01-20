@@ -7,10 +7,9 @@ function Dashboard() {
   return (
     <div>
       <Header />
-<div className="dashboard-list">
-<DashboardTabs />
-</div>
-      
+      <div className="dashboard-list">
+        <DashboardTabs />
+      </div>
     </div>
   );
 }
