@@ -1,14 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import { Col, Container, Row, Form } from "react-bootstrap";
 
 function Login() {
   return (
-    <div>
-      <div className="container">
+      <Container>
         <div className="row">
           <div className="col-md-offset-5 col-md-5 col-sm-12 col-sm-offset-1 text-center">
             <div className="form-login">
+              <h1><span className="lida-logo">LIDA</span></h1>
               <h1 className="text-white">
                 <b>Life & Annuities</b>
                 <br></br>
@@ -42,7 +41,7 @@ function Login() {
                       </Col>
                       <Col>
                         <span>
-                          <a href="#">Forgot Password</a>
+                          <a href="#!">Forgot Password</a>
                         </span>
                       </Col>
                     </Row>
@@ -52,7 +51,7 @@ function Login() {
 
               <div className="wrapper">
                 <span className="group-btn">
-                  <a href="#" className="btn btn-warning btn-md">
+                  <a href="#!" className="btn btn-warning btn-md">
                     login <i className="fa fa-sign-in"></i>
                   </a>
                 </span>
@@ -77,8 +76,7 @@ function Login() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Container>
   );
 }
 

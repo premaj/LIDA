@@ -1,83 +1,98 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Col,
   Container,
   Row,
-  Form,
+  Badge,
   Button,
   Navbar,
   NavDropdown,
   Nav,
   FormControl,
-  InputGroup,
+  InputGroup
 } from "react-bootstrap";
 import "./header.css";
+import * as Icons from "react-bootstrap-icons";
+import logo from '../../assets/images/logo.svg';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleRight,
-  faBell,
   faCheckSquare,
   faCoffee,
   faEnvelope,
   faPhoneAlt,
-  faSearch,
+  faSearch
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function Header() {
   return (
-    <div>
+    <header>
       <div className="Header-top">
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="#home"></Navbar.Brand>
+        <Navbar bg="white" expand="lg">
+          <Container fluid className="mx-4">
+            <Navbar.Brand href="/">
+              {/* <img
+                src={logo}
+                width="30"
+                height="30"
+                className="d-inline-block align-center me-5"
+                alt="Agent Dashboard"
+              /> */}
+              <span className="lida-logo">LIDA</span>
+              <h3 className="d-inline-block align-top">AGENT DASHBOARD</h3>
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <h3>Agent Dashboard</h3>
+              <Nav className="ms-auto">
+                <Nav.Link><Icons.Envelope size={25} className="text-primary mx-2"></Icons.Envelope>
+                  agent_support@lida.com
+                            </Nav.Link>
               </Nav>
-              <Nav>
-                <Nav.Link href="#">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  agent_support@acme.com
-                </Nav.Link>
-                <Nav.Link href="#">
-                  <FontAwesomeIcon icon={faPhoneAlt} />
+              <Nav className="ms-auto">
+                <Nav.Link><Icons.Telephone size={25} className="text-primary mx-2"></Icons.Telephone>
                   (212) 200-0000
+                            </Nav.Link>
+              </Nav>
+              <Nav className="ms-auto">
+                <Nav.Link>
+                  <Icons.Bell size={25} className="text-primary"></Icons.Bell>
+                  <Badge className="badge rounded-pill bg-danger m-minus">9</Badge>
                 </Nav.Link>
-                <Nav.Link href="#">
-                  <FontAwesomeIcon icon={faBell} />
+              </Nav>
+              <Nav className="me-auto">
+                <Nav.Link eventKey={2} href="#!memes">
+                  <NavDropdown title="Mouses" id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="#!action/3.2">
+                      Agent
+                                </NavDropdown.Item>
+                    <NavDropdown.Item href="#!action/3.3">
+                      Notification
+                                </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#!action/3.4"></NavDropdown.Item>
+                  </NavDropdown>
                 </Nav.Link>
-
-                <NavDropdown title="Mouses" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.2">
-                    (212) 200-0000
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Notification
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4"></NavDropdown.Item>
-                </NavDropdown>
+                <Nav.Link><Icons.PersonCircle size={25} className="text-primary"></Icons.PersonCircle>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       </div>
       <div className="Header-bottom">
-        <ul>
-          <li>
+        <Row className="Header-bottom-row">
+          <Col lg={4} className="mt-2">
             <p>
               Welcome <b>mounica charles,</b> Your last login was 06/03/2021{" "}
               <br></br>
               what would you like to do today?
             </p>
-          </li>
-          <li>
+          </Col>
+          <Col lg={5} className="mt-2">
             <InputGroup>
               <Button variant="outline-success">
                 <FontAwesomeIcon
@@ -92,20 +107,20 @@ function Header() {
                 isValid={true}
               />
             </InputGroup>
-          </li>
-          <li>
+          </Col>
+          <Col lg={3} className="mt-2">
             <span className="group-btn">
-              <a href="#" className="btn btn-warning btn-md">
+              <a href="#!" className="btn btn-warning btn-md">
                 Generate quote{" "}
                 <span>
                   <FontAwesomeIcon icon={faAngleRight} />
                 </span>
               </a>
             </span>
-          </li>
-        </ul>
+          </Col>
+        </Row>
       </div>
-    </div>
+    </header>
   );
 }
 

@@ -361,3 +361,63 @@ h4.mytools a span svg {
   color: #43425d;
   line-height: 24px;
 }
+/* content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #e25a00;
+    border-radius: 25px;
+    left: -15px;
+    top: 6px;
+} */
+.new,
+.inprogress,
+.complete,
+.hold {
+  position: relative;
+}
+.client-table table tbody tr td:nth-child(5) span {
+  background: #eb7600;
+  padding: 5px;
+  color: #fff;
+}
+/* .dashboard-list li.nav-item{
+    position: relative;
+}
+.dashboard-list li.nav-item:first-child button{
+    position: absolute;
+    background: url('../../assets/images/Dashboard.png');
+    background-repeat: no-repeat;
+} */
+.padding-0 {
+  padding: 0px;
+}
+ul.myresearcharea.nav.nav-tabs li button {
+  font-size: 15px;
+}
+
+ul.myresearcharea.nav.nav-tabs li {
+  display: inline-block;
+  font-size: 14px;
+  padding: 0;
+}
+ul.myresearcharea.nav.nav-tabs {
+  display: block;
+  padding: 0;
+}
+.myresearcharea-list .tab-content {
+  background: none;
+}
+.myresearcharea-list .tab-content h3 {
+  font-size: 15px;
+  padding: 10px;
+  margin-left: 20px;
+  /* color: red; */
+  color: #808495;
+  /* margin-bottom: 20px; */
+}
+.myresearcharea-list .tab-content .margin-0.border-bottom.row {
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}

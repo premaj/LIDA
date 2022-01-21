@@ -1,7 +1,6 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import Header from "../Header/header";
 import DashboardTabs from "../Dashboard/dashbordTabs";
+import Header from "../Header/header";
 
 function Dashboard() {
   return (
