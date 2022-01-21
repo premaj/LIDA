@@ -16,6 +16,8 @@ import MyTools from "./myTools";
 import MyReports from "./myReports";
 import ClientTable from "./clientTable";
 import MyIncentives from "./myIncentives";
+import NextPremiumsDue from "../NextPremiumsDue";
+import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
@@ -73,7 +75,7 @@ function MyDashboard() {
               </Col>
               <Col>
                 <div className="dashboard-widget">
-                  <h3 className="widget-heading">Next Premiums Due</h3>
+                  <NextPremiumsDue />
                 </div>
               </Col>
             </Row>
@@ -85,7 +87,7 @@ function MyDashboard() {
               </Col>
               <Col>
                 <div className="dashboard-widget">
-                  <h3 className="widget-heading">My Commisions</h3>
+                  <MyCommissions />
                 </div>
               </Col>
             </Row>

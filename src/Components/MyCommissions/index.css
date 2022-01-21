@@ -1,0 +1,48 @@
+.commission {
+  margin: 0px;
+  padding: 0px;
+}
+.commission .title {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+    font-size: 20px;
+    color: #3A3E41;
+  letter-spacing: 0;
+  margin-bottom: 30px;
+}
+.commission span {
+  text-align: right;
+  float: right;
+  font-weight: bold;
+}
+.commission .subtitle {
+  font-size: 16px;
+  color: #808495;
+  margin: 0;
+  padding: 0;
+}
+.commission h4.subtitle {
+  border: 0px;
+}
+.commission .price {
+  font-size: 24px;
+  color: #009adf;
+  letter-spacing: 0;
+  margin: 0;
+  font-weight: 500;
+}
+.progress {
+  height: 2rem;
+  border-radius: 0;
+  margin-top: 4px;
+}
+.commission .bg-info{
+  background: #109ADF;
+}
+
+.commission .ract{
+  background: #F5F6FA;
+    padding: 10px 10px;
+    max-width: 165px;
+}
