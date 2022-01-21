@@ -262,3 +262,35 @@ h4.mytools a span svg {
     background: url('../../assets/images/Dashboard.png');
     background-repeat: no-repeat;
 } */
+.padding-0{
+    padding: 0px;
+}
+ul.myresearcharea.nav.nav-tabs li button {
+    font-size: 15px;
+}
+
+ul.myresearcharea.nav.nav-tabs li {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0;
+}
+ul.myresearcharea.nav.nav-tabs {
+    display: block;
+    padding: 0;
+}
+.myresearcharea-list .tab-content {
+    background: none;
+}
+.myresearcharea-list .tab-content h3{
+    font-size: 15px;
+    padding: 10px;
+    margin-left: 20px;
+    /* color: red; */
+    color: #808495;
+    /* margin-bottom: 20px; */
+}
+.myresearcharea-list .tab-content .margin-0.border-bottom.row {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}

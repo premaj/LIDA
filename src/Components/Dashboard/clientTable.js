@@ -12,6 +12,8 @@ import {
   faComment,
 } from "@fortawesome/free-solid-svg-icons";
 import "./dashboard.css";
+import Doc from '../../assets/images/Documents.png';
+import Comment from '../../assets/images/Comments.png';
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt,faEllipsisV,faComment);
 
 function ClientTable(){
@@ -38,8 +40,8 @@ function ClientTable(){
       <td>Universal Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="new">New</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -49,8 +51,8 @@ function ClientTable(){
       <td>Terms Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="inprogress">In Progress</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -60,8 +62,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="hold">On Hold</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -71,8 +73,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="complete">Completed</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -82,8 +84,8 @@ function ClientTable(){
       <td>Universal Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="new">New</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -93,8 +95,8 @@ function ClientTable(){
       <td>Terms Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="inprogress">In Progress</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -104,8 +106,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="hold">On Hold</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -115,8 +117,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="complete">Completed</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -126,8 +128,8 @@ function ClientTable(){
       <td>Universal Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="new">New</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -137,8 +139,8 @@ function ClientTable(){
       <td>Terms Life</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="inprogress">In Progress</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -148,8 +150,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="hold">On Hold</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>
@@ -159,8 +161,8 @@ function ClientTable(){
       <td>Fixed Annuity</td>
       <td>04/16/2021</td>
       <td><span>669012001</span></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
-      <td><FontAwesomeIcon icon={faComment}/></td>
+      <td><a href=''><img src={Doc} alt ='Document'/></a></td>
+      <td><a href=''><img src={Comment} alt ='Comment'/></a></td>
       <td><span className="complete">Completed</span></td>
       <td><FontAwesomeIcon icon={faEllipsisV}/></td>
     </tr>

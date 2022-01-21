@@ -7,6 +7,7 @@ function Login() {
         <div className="row">
           <div className="col-md-offset-5 col-md-5 col-sm-12 col-sm-offset-1 text-center">
             <div className="form-login">
+              <h1><span className="lida-logo">LIDA</span></h1>
               <h1 className="text-white">
                 <b>Life & Annuities</b>
                 <br></br>

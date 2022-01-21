@@ -14,6 +14,7 @@ import Claims from "./claims";
 import MyTools from "./myTools";
 import MyReports from "./myReports";
 import ClientTable from './clientTable';
+import MyResearchArea from "./myResearchArea";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
@@ -122,9 +123,15 @@ function MyDashboard() {
             </Row>
             <Row>
               <Col>
+                <MyResearchArea />
+              </Col>
+            </Row>
+            <Row>
+              <Col>
                 <MyReports />
               </Col>
             </Row>
+
           </Col>
         </Row>
       </Container>

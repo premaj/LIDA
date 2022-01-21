@@ -35,20 +35,21 @@ function Header() {
         <Navbar bg="white" expand="lg">
           <Container fluid className="mx-4">
             <Navbar.Brand href="/">
-              <img
+              {/* <img
                 src={logo}
                 width="30"
                 height="30"
                 className="d-inline-block align-center me-5"
                 alt="Agent Dashboard"
-              />
+              /> */}
+              <span className="lida-logo">LIDA</span>
               <h3 className="d-inline-block align-top">AGENT DASHBOARD</h3>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ms-auto">
                 <Nav.Link><Icons.Envelope size={25} className="text-primary mx-2"></Icons.Envelope>
-                  agent_support@acme.com
+                  agent_support@lida.com
                             </Nav.Link>
               </Nav>
               <Nav className="ms-auto">
