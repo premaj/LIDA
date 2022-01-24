@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Col, Row,  Button, Tabs, Tab } from "react-bootstrap";
+import { Col, Row, Button, Tabs, Tab } from "react-bootstrap";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import SalesTools from "../SalesTools/salesTools";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckSquare,
   faCoffee,
   faEnvelope,
-  faPhoneAlt
+  faPhoneAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import MyDashboard from "../Dashboard/myDashboard";
 import Popup from "../Common/Popup";
@@ -35,6 +37,13 @@ function DashboardTabs() {
           <Row className="margin-0">
             <Col>
               <MyDashboard />
+            </Col>
+          </Row>
+        </Tab>
+        <Tab eventKey="sales" title="Sales Tool">
+          <Row className="margin-0">
+            <Col>
+              <SalesTools />
             </Col>
           </Row>
         </Tab>

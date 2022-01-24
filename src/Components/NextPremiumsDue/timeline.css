@@ -1,0 +1,86 @@
+.dot-wrapper {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.dot-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot span {
+  font-size: 14px;
+  padding-top: 5px;
+  text-align: center;
+  display: block;
+}
+.verticle-line {
+    width: 1px;
+    height: 18px;
+    background: #707070;
+    margin-left: 12px;
+    position: absolute;
+    top: 32px;
+}
+.horizantal-line {
+  height: 1px;
+  background: grey;
+  margin: 0 auto;
+  position: absolute;
+  bottom: -2px;
+}
+.first-line {
+  margin-left: 12px;
+}
+.w-13 {
+  width: 13% !important;
+}
+.horizantal-line .last-line {
+  width: 13% !important;
+}
+.timeline-days {
+  position: absolute;
+  bottom: -25px;
+  font-size: 14px;
+  text-align: center;
+  font-family: Helvetica;
+  color: #3a3e41;
+  letter-spacing: 0;
+}
+.blue {
+  background-color: #009adf;
+  color: white;
+}
+.red {
+  background: #e94e24;
+  color: white;
+}
+.dark-red {
+  background: #960144;
+  color: white;
+}
+.green {
+  background: #95c11f;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 7px;
+}
+.green .verticle-line {
+  margin-left: 20px;
+  padding: 0px;
+  position: absolute;
+  top: 39px;
+  height: 11px;
+}

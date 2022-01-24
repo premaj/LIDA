@@ -5,7 +5,7 @@ import Header from "../Header/header";
 function Dashboard() {
   return (
     <div>
-      <Header/>
+      <Header />
       <div className="dashboard-list">
         <DashboardTabs />
       </div>
