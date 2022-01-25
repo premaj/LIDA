@@ -3,8 +3,12 @@ import { Container, Row, Col, Form } from "react-bootstrap";
 import SurveyTop from "./surveyTop";
 import SurveyQues from "./surveyQues";
 import "./index.css";
+import { Route, Switch } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import FinancialInformation from "./financialInformation";
+import PolicyRider from "./policyRider";
+import Illustration from "./illustration";
 
 function FormInput() {
   return (
@@ -15,6 +19,16 @@ function FormInput() {
         </div>
         <div>
           <SurveyQues />
+          <FinancialInformation />
+          <PolicyRider />
+          <Illustration />
+          <Switch>
+            <Route exact path="/" component={SurveyQues} />
+            <Route exact path="/finance" component={FinancialInformation} />
+            <Route exact path="/policyRider" component={PolicyRider} />
+            {/* <Route exact path="/illustrayion" component={} /> */}
+          </Switch>
+          
         </div>
       </div>
       <div className="--lida-sales-footer">

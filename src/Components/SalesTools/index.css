@@ -142,3 +142,9 @@
   float: right;
   margin-top: 20px;
 }
+
+
+.--lida-sales-btn-group-previous-next{
+  display: flex;
+  justify-content: space-between;
+}
