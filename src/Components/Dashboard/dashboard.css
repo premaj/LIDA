@@ -436,3 +436,8 @@ ul.myresearcharea.nav.nav-tabs {
 .nav-item button.active svg {
   fill: #109adf;
 }
+span.--lida-dashboard-myincentives-header,h3.premium-title,.commission .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #585555;
+}

@@ -7,12 +7,12 @@ import "./dashboard.css";
 function MyIncentives() {
   return (
     <div className="--lida-dashboard-myincentives">
-      <div>
+      {/* <div>
         <span className="--lida-dashboard-myincentives-header">
           My Incentives
         </span>
         <span className="--lida-dashboard-myincentives-header-right">...</span>
-      </div>
+      </div> */}
       <div className="--lida-dashboard-myincentives-body">
         <Row>
           <Col className="--myincentives-body-left" lg={5} md={5}>

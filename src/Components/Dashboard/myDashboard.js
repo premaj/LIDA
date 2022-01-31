@@ -71,7 +71,11 @@ function MyDashboard() {
             <Row>
               <Col>
                 <div className="dashboard-widget min-height-380">
-                  <h3 className="widget-heading">Policies</h3>
+                  {/* <h3 className="widget-heading">Policies</h3> */}
+                  <div>
+        <span className="--lida-dashboard-myincentives-header">Policies</span>
+        <span className="--lida-dashboard-myincentives-header-right">...</span>
+      </div>
                   <Policy />
                 </div>
                 
@@ -87,6 +91,11 @@ function MyDashboard() {
             <Row>
               <Col>
               <div className="dashboard-widget min-height-380">
+              <div>
+        <span className="--lida-dashboard-myincentives-header">My Incentives</span>
+        <span className="--lida-dashboard-myincentives-header-right">...</span>
+      </div>
+                 
                 <MyIncentives />
                 </div>
               </Col>

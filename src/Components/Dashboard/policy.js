@@ -84,10 +84,10 @@ function Policy() {
   };
   return (
     <div className="--lida-dashboard-myincentives">
-      <div>
+      {/* <div>
         <span className="--lida-dashboard-myincentives-header">Policies</span>
         <span className="--lida-dashboard-myincentives-header-right">...</span>
-      </div>
+      </div> */}
       <div className="--lida-dashboard-myincentives-body">
         {" "}
         <Chart
