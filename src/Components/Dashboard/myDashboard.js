@@ -16,6 +16,7 @@ import MyTools from "./myTools";
 import MyReports from "./myReports";
 import ClientTable from "./clientTable";
 import MyIncentives from "./myIncentives";
+import Policy from "./policy";
 import NextPremiumsDue from "../NextPremiumsDue";
 import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
@@ -69,9 +70,7 @@ function MyDashboard() {
             {/* Policies and next Premium Due */}
             <Row>
               <Col>
-                <div className="dashboard-widget">
-                  <h3 className="widget-heading">Policies</h3>
-                </div>
+                <Policy />
               </Col>
               <Col>
                 <div className="dashboard-widget">
