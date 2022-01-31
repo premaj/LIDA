@@ -47,7 +47,7 @@
     border:0;
     border-radius:0;
     opacity: 1;
-    background-color: #6c757d;
+    background-color: #39607b;
 }
 .modal-header .btn-close {
     padding: 5px;
@@ -66,5 +66,15 @@
 .modal-footer {
     border-top: 2px solid #dee2e6;
     margin: 0px 25px;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #39607b;
+    border-color: #39607b;
+}
+.btn-secondary:hover,.btn-secondary:focus {
+    color: #fff;
+    background-color: #39607b;
+    border-color: #39607b;
 }
 

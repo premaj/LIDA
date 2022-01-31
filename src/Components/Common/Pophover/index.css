@@ -1,0 +1,47 @@
+/* popover-container */
+.popover-container {
+    min-width: 630px;
+  }
+  .popover-container .table > thead {
+    background: #f6f6f6;
+  }
+  .popover {
+    border-radius: 0;
+  }
+  .popover-header {
+    background-color: #ffffff;
+    border: 0px;
+    border-radius: 0;
+  }
+  .popover-body {
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #808495;
+    min-height: auto;
+    overflow: scroll;
+    margin-bottom: 10px;
+  }
+  .popover-container .popover-header button {
+    position: absolute;
+    right: 10px;
+  }
+  .popover-container .table > :not(:first-child) {
+    border-top: 0px solid currentColor;
+  }
+  .popover-container .table > :not(caption) > * > * {
+    font-family: Helvetica;
+    font-size: 15px;
+    color: #43425d;
+    letter-spacing: 0;
+  }
+  .orange-bg {
+    background: #eb7600;
+    padding: 5px;
+    color: #fff;
+    width: 100%;
+    height: 30px;
+    line-height: 21px;
+    text-align: center;
+    font-size: 16px;
+  }
+  

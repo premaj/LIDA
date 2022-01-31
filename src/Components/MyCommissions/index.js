@@ -14,7 +14,7 @@ const MyCommissions = () => {
       </Row>
       <Row>
         <Col className="d-flex align-items-center justify-content-center">
-          <div class="d-flex align-items-center justify-content-center">
+          <div className="d-flex align-items-center justify-content-center">
             <img src={Dollar} className="d-flex me-3" />
             <h4 className="subtitle">
               Upcoming Commission Payment 07/15/2021:{" "}

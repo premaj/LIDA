@@ -19,6 +19,7 @@ import MyIncentives from "./myIncentives";
 import NextPremiumsDue from "../NextPremiumsDue";
 import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
+import Policy from "./policy";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
@@ -69,12 +70,14 @@ function MyDashboard() {
             {/* Policies and next Premium Due */}
             <Row>
               <Col>
-                <div className="dashboard-widget">
+                <div className="dashboard-widget min-height-380">
                   <h3 className="widget-heading">Policies</h3>
+                  <Policy />
                 </div>
+                
               </Col>
               <Col>
-                <div className="dashboard-widget">
+                <div className="dashboard-widget min-height-380">
                   <NextPremiumsDue />
                 </div>
               </Col>
@@ -83,10 +86,12 @@ function MyDashboard() {
             {/* My incentives and My commisions */}
             <Row>
               <Col>
+              <div className="dashboard-widget min-height-380">
                 <MyIncentives />
+                </div>
               </Col>
               <Col>
-                <div className="dashboard-widget">
+                <div className="dashboard-widget min-height-380">
                   <MyCommissions />
                 </div>
               </Col>

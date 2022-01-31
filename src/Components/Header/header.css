@@ -18,6 +18,39 @@
   letter-spacing: 0;
   line-height: 31px;
 }
+.nabbar-container {
+  align-items: center;
+  justify-content: end;
+}
+.navbar {
+  padding: 12px 0px;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-family: Helvetica;
+  font-size: 18px;
+  color: #4b4d5c;
+}
+.navbar-light .navbar-nav .nav-link svg {
+  margin-right: 12px;
+}
+.navbar .badge {
+  padding: 2px 5px;
+  font-size: 12px;
+  position: relative;
+  left: -19px;
+}
+.navbar-brand {
+  padding-bottom: 0;
+  padding-top: 9px;
+}
+.navbar-brand > h3 {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #2f4e61;
+  letter-spacing: 0;
+  line-height: 31px;
+  margin-top: 8px;
+}
 .navbar-dark .navbar-brand {
   color: #fff;
   position: relative;
@@ -114,11 +147,101 @@
   left: -18px;
   font-size: 10px;
 }
-span.lida-logo {
-  background: #3c3a3a;
-  padding: 4px 20px;
-  color: #fff;
-  font-size: 18px;
+.navbar-brand .lida-img-logo {
   margin-right: 15px;
-  font-style: italic;
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+}
+
+@media (min-width: 991px) and (max-width: 1115px) {
+  .Header-bottom input {
+    min-width: 330px !important;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .navbar > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 12px;
+  }
+  .navbar-brand > h3 {
+    font-size: 22px;
+  }
+  .ms-lg-4 {
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 990px) {
+  .nabbar-container {
+    align-items: start;
+    justify-content: start;
+  }
+  .Header-bottom input {
+    min-width: auto !important;
+  }
+  .input-group > .form-control,
+  .input-group > .form-select {
+    width: auto !important;
+    min-width: auto !important;
+  }
+  span.lida-logo {
+    padding: 10px 30px;
+  }
+  .nabbar-container {
+    align-items: start;
+    justify-content: end;
+    padding: 10px 0px 0px 5px;
+  }
+  .navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0px;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px 30px;
+    margin-top: 10px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+  .nabbar-container {
+    align-items: start;
+    justify-content: start;
+  }
+  .Header-bottom input {
+    min-width: auto !important;
+  }
+  .input-group > .form-control,
+  .input-group > .form-select {
+    width: auto !important;
+    min-width: auto !important;
+  }
+  span.lida-logo {
+    padding: 10px 30px;
+  }
+  .nabbar-container {
+    align-items: start;
+    justify-content: end;
+    padding: 10px 0px 0px 5px;
+  }
+  .navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0px;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
 }
