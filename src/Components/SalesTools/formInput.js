@@ -9,6 +9,10 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import FinancialInformation from "./financialInformation";
 import PolicyRider from "./policyRider";
 import Illustration from "./illustration";
+import PerSaleAgent from "./perSaleAgent";
+import PreSaleInsured from "./preSaledInsured";
+import PreSaleInsuredHistory from "./preSaleInsuredHistory";
+import Finalize from "./finalize";
 
 function FormInput() {
   return (
@@ -22,6 +26,10 @@ function FormInput() {
           <FinancialInformation />
           <PolicyRider />
           <Illustration />
+          <PerSaleAgent />
+          <PreSaleInsured />
+          <PreSaleInsuredHistory />
+          <Finalize />
           <Switch>
             <Route exact path="/" component={SurveyQues} />
             <Route exact path="/finance" component={FinancialInformation} />
