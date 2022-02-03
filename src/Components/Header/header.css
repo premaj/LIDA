@@ -1,0 +1,247 @@
+.Header-top .bg-dark {
+  background: #fff !important;
+  padding: 15px;
+}
+.Header-top .navbar-dark .navbar-nav .nav-link {
+  color: #4f5152d1;
+  font-size: 17px !important;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+.me-auto.navbar-nav h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin: 0;
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #2f4e61;
+  letter-spacing: 0;
+  line-height: 31px;
+}
+.nabbar-container {
+  align-items: center;
+  justify-content: end;
+}
+.navbar {
+  padding: 12px 0px;
+}
+.navbar-light .navbar-nav .nav-link {
+  font-family: Helvetica;
+  font-size: 18px;
+  color: #4b4d5c;
+}
+.navbar-light .navbar-nav .nav-link svg {
+  margin-right: 12px;
+}
+.navbar .badge {
+  padding: 2px 5px;
+  font-size: 12px;
+  position: relative;
+  left: -19px;
+}
+.navbar-brand {
+  padding-bottom: 0;
+  padding-top: 9px;
+}
+.navbar-brand > h3 {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #2f4e61;
+  letter-spacing: 0;
+  line-height: 31px;
+  margin-top: 8px;
+}
+.navbar-dark .navbar-brand {
+  color: #fff;
+  position: relative;
+  left: -90px;
+  border-radius: 0;
+  background-color: #2f4e61;
+}
+.Header-top .navbar-dark .navbar-nav .nav-link svg {
+  margin-right: 14px;
+  vertical-align: middle;
+  color: #0d6efdb8;
+  font-size: 22px;
+}
+.Header-bottom {
+  background: #b7c0c6;
+}
+.Header-bottom-row {
+  align-items: center;
+  margin: 0 10px;
+}
+.Header-bottom ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.Header-bottom ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  vertical-align: middle;
+}
+.Header-bottom input {
+  min-width: 390px !important;
+}
+.Header-bottom ul li p {
+  font-size: 18px;
+}
+.Header-bottom ul li p b {
+  text-transform: capitalize;
+}
+.Header-bottom .btn-outline-success {
+  color: #333 !important;
+  border-color: #fff;
+  background: #fff !important;
+  border-radius: 0;
+}
+.Header-bottom .form-control.is-valid,
+.was-validated .form-control:valid {
+  color: #333 !important;
+  border-color: #fff;
+  background: #fff !important;
+  border-radius: 0;
+}
+.Header-bottom .form-control.is-valid::placeholder {
+  color: #333 !important;
+}
+.Header-bottom a.btn.btn-warning.btn-md {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0;
+  padding: 10px 40px;
+  background-color: #eb7600;
+  border-color: #eb7600;
+}
+.Header-bottom a.btn.btn-warning.btn-md span svg {
+  width: 20px;
+  height: 20px;
+  background: white;
+  color: #eb7600;
+  border-radius: 25px;
+  margin-left: 30px;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.form-control {
+  padding: 0.28rem 0.75rem;
+}
+.badge-rounded {
+  border-radius: 50%;
+  padding: 1px;
+  height: 15px;
+  width: 15px;
+  position: relative;
+  z-index: 100;
+  left: -18px;
+  font-size: 10px;
+}
+.navbar-brand .lida-img-logo {
+  margin-right: 15px;
+  display: inline-block;
+  width: 100px;
+  margin-right: 10px;
+}
+
+@media (min-width: 991px) and (max-width: 1115px) {
+  .Header-bottom input {
+    min-width: 330px !important;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+  .navbar > .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 12px;
+  }
+  .navbar-brand > h3 {
+    font-size: 22px;
+  }
+  .ms-lg-4 {
+    margin-left: 0.5rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: end;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 990px) {
+  .nabbar-container {
+    align-items: start;
+    justify-content: start;
+  }
+  .Header-bottom input {
+    min-width: auto !important;
+  }
+  .input-group > .form-control,
+  .input-group > .form-select {
+    width: auto !important;
+    min-width: auto !important;
+  }
+  span.lida-logo {
+    padding: 10px 30px;
+  }
+  .nabbar-container {
+    align-items: start;
+    justify-content: end;
+    padding: 10px 0px 0px 5px;
+  }
+  .navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0px;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding: 10px 30px;
+    margin-top: 10px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 767px) {
+  .nabbar-container {
+    align-items: start;
+    justify-content: start;
+  }
+  .Header-bottom input {
+    min-width: auto !important;
+  }
+  .input-group > .form-control,
+  .input-group > .form-select {
+    width: auto !important;
+    min-width: auto !important;
+  }
+  span.lida-logo {
+    padding: 10px 30px;
+  }
+  .nabbar-container {
+    align-items: start;
+    justify-content: end;
+    padding: 10px 0px 0px 5px;
+  }
+  .navbar-brand {
+    padding-bottom: 0;
+    padding-top: 0px;
+  }
+  .Header-bottom a.btn.btn-warning.btn-md {
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,80 @@
+.lida-button-default{
+    border-radius: 0;
+    height: 30px;
+    line-height: 0px;
+    font-size: 14px;
+}
+/* Modal Button CSS */
+.btn-custom{
+    border-radius: 0;
+    height: 30px;
+    line-height: 0px;
+    font-size: 14px;
+    background: url('../../../assets/images/customize.png') left center no-repeat;
+    padding-left: 40px;
+    background-color: #39607B;
+}
+.btn-add{
+    border-radius: 0;
+    height: 30px;
+    line-height: 0px;
+    font-size: 14px;
+    background: url('../../../assets/images/add.png') left center no-repeat;
+    padding-left: 40px;
+    background-color: #39607B;
+}
+.btn-custom:hover,.btn-add:hover,.btn-custom:focus{
+    background-color: #39607B;
+}
+.btn-right {
+    position: relative;
+    float: right;
+    top: 15px;
+    right: 40px;
+}
+.modal-heading {
+    font-family: Helvetica;
+    font-size: 20px;
+    color: #3A3E41;
+}
+.modal-header {
+    padding: 19px 0px;
+    margin: 0px 29px;
+}
+.btn-close {
+    color: #FFF;
+    background: transparent url('../../../assets/images/close.svg') center/1em auto no-repeat;
+    border:0;
+    border-radius:0;
+    opacity: 1;
+    background-color: #39607b;
+}
+.modal-header .btn-close {
+    padding: 5px;
+    margin: 3px;
+}
+.modal-section-wrapper{
+    padding: 0px;
+}
+.modal-section-wrapper h4{
+    padding: 0px;
+    font-family: Helvetica;
+    font-size: 16px;
+    color: #405968;
+    line-height: 25px;
+}
+.modal-footer {
+    border-top: 2px solid #dee2e6;
+    margin: 0px 25px;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #39607b;
+    border-color: #39607b;
+}
+.btn-secondary:hover,.btn-secondary:focus {
+    color: #fff;
+    background-color: #39607b;
+    border-color: #39607b;
+}
+
