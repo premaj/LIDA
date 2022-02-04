@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import { Modal, Container, Row, Col, Button } from "react-bootstrap";
 import "./index.css";
 import Checkbox from "../Checkbox";
+import { customizeDashboardContext } from "../../ContextApi/CustomizeDashBoardContext";
 const Popup = props => {
+  const customizeDashboardC = useContext(customizeDashboardContext);
   return (
     <>
       <Modal
@@ -22,34 +24,57 @@ const Popup = props => {
           <Container>
             <div className="modal-section-wrapper">
               <h4>Main Navigation</h4>
+              
               <Row>
                 <Col xs={12} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer"/>
+                  <Checkbox
+                    title="My Dashboard"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="Speedometer"
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="Sales Tools" icon="BriefcaseFill" />
+                  <Checkbox
+                    title="Sales Tools"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="BriefcaseFill"
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="Renewals" icon="UmbrellaFill" checked={true} />
+                  <Checkbox
+                    title="Renewals"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="UmbrellaFill"
+                  />
                 </Col>
               </Row>
               <Row>
                 <Col xs={12} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="My Commissions"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="CurrencyDollar"
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="My Clients"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="StarFill"
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={12} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
-                </Col>
-                <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="Reports"
+                    contextProviderData={customizeDashboardC.dashboardTab}
+                    contextProviderSetData={customizeDashboardC.setDashboardTab}
+                    icon="FileEarmarkTextFill"
+                  />
                 </Col>
               </Row>
             </div>
