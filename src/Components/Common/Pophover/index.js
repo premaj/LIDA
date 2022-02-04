@@ -1,8 +1,6 @@
 import React from "react";
 import { Overlay, Popover } from "react-bootstrap";
 import './index.css';
-
-
 const Tooltips = React.forwardRef((props, ref) => (
   <Overlay
     show={props.show}
