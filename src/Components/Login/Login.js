@@ -11,18 +11,18 @@ function Login() {
             <img src={Logo} alt="Logo" className="lida-logo" />
             <h1 className="lida-title">Life & Annuities</h1>
             <h3 className="lida-subtitle">Agent Dashboard</h3>
-            <Row className="mt-5">
+            <Row className="mt-4">
               <Col>
                 <Form>
                   <Form.Group
-                    className="mb-3"
+                    className="mb-2"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Username</Form.Label>
                     <Form.Control type="email" placeholder="" />
                   </Form.Group>
                   <Form.Group
-                    className="mb-3"
+                    className="mb-2"
                     controlId="exampleForm.ControlInput1"
                   >
                     <Form.Label>Password</Form.Label>
@@ -49,7 +49,7 @@ function Login() {
 
             <div className="wrapper">
               <span className="group-btn">
-                <a href="dashboard" className="btn btn-warning btn-md">
+                <a href="dashboard" className="btn m-0 btn-warning btn-md">
                   login <i className="fa fa-sign-in"></i>
                 </a>
               </span>

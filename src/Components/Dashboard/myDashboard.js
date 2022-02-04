@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import * as Icons from "react-bootstrap-icons";
 import {
   ButtonGroup,
   ButtonToolbar,
@@ -9,6 +10,9 @@ import {
   Col,
   Row,
   ToggleButton,
+  InputGroup,
+  FormControl,
+  Form,
 } from "react-bootstrap";
 
 import jsonData from "../../table.json";
@@ -38,6 +42,9 @@ function MyDashboard() {
   // buttonGroup variables defined
   const [checked, setChecked] = useState(true);
   const [buttonValue, setButtonValue] = useState("All");
+
+  // filter data onclick search button 
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   // handleButtonClick for filter data using button
   const buttonGroups = [
@@ -72,6 +79,20 @@ function MyDashboard() {
       return filterItem;
     }
   };
+
+  // filter data onclick search button 
+  const handleSearch = event => {
+    if(event !== ""){
+     setSearchTerm(event.target.value);
+    }
+   };
+  React.useEffect(() => {
+     const results = tableValue.filter(item =>
+      item.Client.toLowerCase().includes(searchTerm.toLowerCase())
+     );
+     setTableValue(results);
+   }, [searchTerm]);
+
 
   return (
     <div>
@@ -170,10 +191,7 @@ function MyDashboard() {
                   <h3 className="widget-heading">
                     My Workspace <span>...</span>
                   </h3>
-                  <ButtonToolbar
-                    className="mb-3"
-                    aria-label="Buttons for filter table data"
-                  >
+                  <ButtonToolbar className="justify-content-between mt-4">
                     <ButtonGroup>
                       {buttonGroups.map((item, index) => (
                         <ToggleButton
@@ -187,11 +205,26 @@ function MyDashboard() {
                           onChange={(e) =>
                             handleButtonClick(e.currentTarget.value)
                           }
+                          className="filter-btn-width"
                         >
                           {item.name}
                         </ToggleButton>
                       ))}
                     </ButtonGroup>
+                    <InputGroup>
+                      <FormControl
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleSearch}
+                      />
+                      <InputGroup.Text id="btnGroupAddon" className="orange">
+                      <Icons.Search className="ms-1" size={24}/>
+                      </InputGroup.Text>
+                    </InputGroup>
+                    <div className="pagination-box">
+                       <span className="pagination-text">15</span>
+                       <span>of 45 records</span>
+                    </div>
                   </ButtonToolbar>
                 </div>
                 <Row>

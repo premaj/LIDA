@@ -9,8 +9,10 @@
     color: #405968;
 }
 .lida-subtitle{
-    font-size: 30px; 
-    color: #405968; 
+    font-size: 30px;
+    color: #405968;
+    font-family: Helvetica;
+    font-weight: 400;
 }
 .form-login h1{
     color: #405968;
