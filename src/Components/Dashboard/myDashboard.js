@@ -1,8 +1,21 @@
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import * as Icons from "react-bootstrap-icons";
+import {
+  ButtonGroup,
+  ButtonToolbar,
+  Container,
+  Col,
+  Row,
+  ToggleButton,
+  InputGroup,
+  FormControl,
+  Form,
+} from "react-bootstrap";
+
+import jsonData from "../../table.json";
 
 import {
   faCheckSquare,
@@ -23,6 +36,64 @@ import Policy from "./policy";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
+  // table inital data
+  const [tableValue, setTableValue] = useState([...jsonData]);
+
+  // buttonGroup variables defined
+  const [checked, setChecked] = useState(true);
+  const [buttonValue, setButtonValue] = useState("All");
+
+  // filter data onclick search button 
+  const [searchTerm, setSearchTerm] = React.useState("");
+
+  // handleButtonClick for filter data using button
+  const buttonGroups = [
+    { name: "All", value: "All" },
+    { name: "Referred", value: "Referred" },
+    { name: "Inforced", value: "Inforced" },
+    { name: "Declined", value: "Declined" },
+  ];
+  const handleButtonClick = (name) => {
+    setButtonValue(name);
+    FilterTabledata(name);
+  };
+
+  // filter table data using button click
+  const FilterTabledata = (name) => {
+    if (name === "All") {
+      return tableValue;
+    } else if (name === "Referred") {
+      const filterItem = tableValue.filter((item) => {
+        return item.Status === "New";
+      });
+      return filterItem;
+    } else if (name === "Inforced") {
+      const filterItem = tableValue.filter((item) => {
+        return item.Status === "Complete";
+      });
+      return filterItem;
+    } else if (name === "Declined") {
+      const filterItem = tableValue.filter((item) => {
+        return item.Status === "On Hold";
+      });
+      return filterItem;
+    }
+  };
+
+  // filter data onclick search button 
+  const handleSearch = event => {
+    if(event !== ""){
+     setSearchTerm(event.target.value);
+    }
+   };
+  React.useEffect(() => {
+     const results = tableValue.filter(item =>
+      item.Client.toLowerCase().includes(searchTerm.toLowerCase())
+     );
+     setTableValue(results);
+   }, [searchTerm]);
+
+
   return (
     <div>
       <Container fluid>
@@ -73,12 +144,15 @@ function MyDashboard() {
                 <div className="dashboard-widget min-height-380">
                   {/* <h3 className="widget-heading">Policies</h3> */}
                   <div>
-        <span className="--lida-dashboard-myincentives-header">Policies</span>
-        <span className="--lida-dashboard-myincentives-header-right">...</span>
-      </div>
+                    <span className="--lida-dashboard-myincentives-header">
+                      Policies
+                    </span>
+                    <span className="--lida-dashboard-myincentives-header-right">
+                      ...
+                    </span>
+                  </div>
                   <Policy />
                 </div>
-                
               </Col>
               <Col>
                 <div className="dashboard-widget min-height-380">
@@ -90,13 +164,17 @@ function MyDashboard() {
             {/* My incentives and My commisions */}
             <Row>
               <Col>
-              <div className="dashboard-widget min-height-380">
-              <div>
-        <span className="--lida-dashboard-myincentives-header">My Incentives</span>
-        <span className="--lida-dashboard-myincentives-header-right">...</span>
-      </div>
-                 
-                <MyIncentives />
+                <div className="dashboard-widget min-height-380">
+                  <div>
+                    <span className="--lida-dashboard-myincentives-header">
+                      My Incentives
+                    </span>
+                    <span className="--lida-dashboard-myincentives-header-right">
+                      ...
+                    </span>
+                  </div>
+
+                  <MyIncentives />
                 </div>
               </Col>
               <Col>
@@ -113,10 +191,45 @@ function MyDashboard() {
                   <h3 className="widget-heading">
                     My Workspace <span>...</span>
                   </h3>
+                  <ButtonToolbar className="justify-content-between mt-4">
+                    <ButtonGroup>
+                      {buttonGroups.map((item, index) => (
+                        <ToggleButton
+                          key={index}
+                          id={`item-${index}`}
+                          type="radio"
+                          variant="outline-primary"
+                          name={item.name}
+                          value={item.value}
+                          checked={buttonValue === item.value}
+                          onChange={(e) =>
+                            handleButtonClick(e.currentTarget.value)
+                          }
+                          className="filter-btn-width"
+                        >
+                          {item.name}
+                        </ToggleButton>
+                      ))}
+                    </ButtonGroup>
+                    <InputGroup>
+                      <FormControl
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleSearch}
+                      />
+                      <InputGroup.Text id="btnGroupAddon" className="orange">
+                      <Icons.Search className="ms-1" size={24}/>
+                      </InputGroup.Text>
+                    </InputGroup>
+                    <div className="pagination-box">
+                       <span className="pagination-text">15</span>
+                       <span>of 45 records</span>
+                    </div>
+                  </ButtonToolbar>
                 </div>
                 <Row>
                   <Col>
-                    <ClientTable />
+                    <ClientTable data={FilterTabledata(buttonValue)} />
                   </Col>
                 </Row>
               </Col>

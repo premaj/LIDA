@@ -183,7 +183,6 @@ h4.mytools a span svg {
 .client-table table thead tr th {
   color: #41464bc7;
   font-size: 15px;
-  padding: 25px 10px;
   border: 0;
   border-bottom: 1px solid #ccc;
 }
@@ -440,4 +439,31 @@ span.--lida-dashboard-myincentives-header,h3.premium-title,.commission .title {
   font-size: 18px;
   font-weight: bold;
   color: #585555;
+}
+.orange{
+    background: #eb7600;
+    width: 37px;
+    height: 38px;
+    padding: 0;
+    color: white;
+    justify-content: center;
+    cursor: pointer;
+}
+.pagination-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pagination-text{
+  border: 1px solid #000;
+    margin: 0 5px !important;
+    padding: 0px 4px;
+}
+.filter-btn-width{
+  width: fit-content;
+  height: 36px;
+  border-radius: 0 !important;
+}
+.input-group input{
+  color: black !important;
 }
