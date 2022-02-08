@@ -33,10 +33,10 @@ import NextPremiumsDue from "../NextPremiumsDue";
 import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
 import Policy from "./policy";
+import { PolicyProvider } from "../ContextApi/PolicyDataProvider";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
-
   // table inital data
   const [tableValue, setTableValue] = useState([...jsonData]);
 
@@ -44,6 +44,8 @@ function MyDashboard() {
   const [checked, setChecked] = useState(true);
 
   const [buttonValue, setButtonValue] = useState("All");
+  //select by year filter for policy 
+  const [policyYear, SetPolicyYear] = useState('2021');
 
   // filter data onclick search button
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -96,6 +98,9 @@ function MyDashboard() {
     }
   };
 
+  const PolicyYearOnChange = (event) => {
+    SetPolicyYear(event.target.value);
+  };
   const handleSearch = (event) => {
     if (event !== "") {
       setSearchTerm(event.target.value);
@@ -155,11 +160,21 @@ function MyDashboard() {
                     <span className="--lida-dashboard-myincentives-header">
                       Policies
                     </span>
+
                     <span className="--lida-dashboard-myincentives-header-right">
-                      ...
+                      <span className="policy-header-right-text">For</span>
+                      <span style={{marginRight:'1.0rem'}}>
+                        <select onChange={PolicyYearOnChange}>
+                          <option value="2021" selected>2021</option>
+                          <option value="2022">2022</option>
+                        </select>
+                      </span>
+                      <span>...</span>
                     </span>
                   </div>
-                  <Policy />
+                  <PolicyProvider>
+                    <Policy policyYear={policyYear} />
+                  </PolicyProvider>
                 </div>
               </Col>
               <Col>
