@@ -3,14 +3,38 @@
     width: 20px;
     height: 20px;
     font-size: 12px;
-    background-color: rgba(211, 211, 211, 0.8);
+    background-color: #A0A0A0;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  .indexedStep.accomplished {
-    background-color: rgba(0, 116, 217, 1);
+  .RSPBprogressBar{
+    background-color: #A0A0A0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .indexedStep{
+    width: 45px;
+    height: 45px;
+  }
+  .RSPBprogressBar .RSPBprogression{
+    background-color: #7bcc27 !important;
   }
   
+  .indexedStep.accomplished {
+    background-color: #7bcc27;
+  }
+  .RSPBprogressBar .RSPBstep{
+    position: unset !important;
+    transform: unset !important; 
+    padding: 0 85px !important;
+  }
+  .cardHeader{
+    background: #3D3D3D;
+    color: white;
+    height: 106px;
+    padding: 20px 0px 0px 0px;
+  }

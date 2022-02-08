@@ -1,155 +1,120 @@
-import React, { Component } from "react";
-import { Form, Button, Card } from "react-bootstrap";
-
-import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Step3 from "./Step3";
-import Step4 from "./Step4";
-
+import React, { useState } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import MultiStepProgressBar from "./MultiStepProgressBar";
+import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import StepFour from "./StepFour";
+import Preview from "./Preview";
 
-class MasterForm extends Component {
-  constructor(props) {
-    super(props);
+const MasterForm = () => {
+  //state for steps
+  const [step, setStep] = useState(1);
 
-    // Set the intiial input values
-    this.state = {
-      currentStep: 1,
-      email: "",
-      username: "",
-      password: "",
-      name: "",
-    };
+  //state for form data
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    age: "",
+    email: "",
+  });
 
-    // Bind the submission to handleChange()
-    this.handleChange = this.handleChange.bind(this);
-
-    // Bind new functions for next and previous
-    this._next = this._next.bind(this);
-    this._prev = this._prev.bind(this);
-  }
-
-  // Use the submitted data to set the state
-  handleChange(event) {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value,
-    });
-  }
-
-  // Trigger an alert on form submission
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { email, username, password, name } = this.state;
-    alert(`Your registration detail: \n 
-      Email: ${email} \n 
-      Username: ${username} \n
-      Password: ${password}`);
+  // function for going to next step by increasing step state by 1
+  const nextStep = () => {
+    setStep(step + 1);
   };
 
-  // Test current step with ternary
-  // _next and _previous functions will be called on button click
-  _next() {
-    let currentStep = this.state.currentStep;
-    // If the current step is 1 or 2, then add one on "next" button click
-    currentStep = currentStep >= 3 ? 4 : currentStep + 1;
-    this.setState({
-      currentStep: currentStep,
-    });
-  }
+  // function for going to previous step by decreasing step state by 1
+  const prevStep = () => {
+    setStep(step - 1);
+  };
 
-  _prev() {
-    let currentStep = this.state.currentStep;
-    // If the current step is 2 or 3, then subtract one on "previous" button click
-    currentStep = currentStep <= 1 ? 1 : currentStep - 1;
-    this.setState({
-      currentStep: currentStep,
-    });
-  }
+  // handling form input data by taking onchange value and updating our previous form data state
+  const handleInputData = (input) => (e) => {
+    // input value from the form
+    const { value } = e.target;
 
-  // The "next" and "previous" button functions
-  get previousButton() {
-    let currentStep = this.state.currentStep;
+    //updating for data state taking previous state and then adding new value to create new object
+    setFormData((prevState) => ({
+      ...prevState,
+      [input]: value,
+    }));
+  };
 
-    // If the current step is not 1, then render the "previous" button
-    if (currentStep !== 1) {
-      return (
-        <Button color="secondary" onClick={this._prev}>
-          Previous
-        </Button>
-      );
+  const FindView = (step) => {
+    switch (step) {
+      // case 1 to show stepOne form and passing nextStep, prevStep, and handleInputData as handleFormData method as prop and also formData as value to the fprm
+      case 1:
+        return (
+          <StepOne
+            nextStep={nextStep}
+            handleFormData={handleInputData}
+            values={formData}
+          />
+        );
+      case 2:
+        return (
+          <StepTwo
+            nextStep={nextStep}
+            prevStep={prevStep}
+            handleFormData={handleInputData}
+            values={formData}
+          />
+        );
+      case 3:
+        return (
+          <StepThree
+            nextStep={nextStep}
+            prevStep={prevStep}
+            handleFormData={handleInputData}
+            values={formData}
+          />
+        );
+      case 4:
+        return (
+          <StepFour
+            nextStep={nextStep}
+            prevStep={prevStep}
+            handleFormData={handleInputData}
+            values={formData}
+          />
+        );
+      case 5:
+        return <Preview values={formData} />;
+      default:
+        return <div></div>;
     }
+  };
 
-    // ...else return nothing
-    return null;
-  }
-
-  get nextButton() {
-    let currentStep = this.state.currentStep;
-    // If the current step is not 3, then render the "next" button
-    if (currentStep < 4) {
-      return (
-        <Button color="primary" onClick={this._next}>
-          Next
-        </Button>
-      );
-    }
-    // ...else render nothing
-    return null;
-  }
-
-  get submitButton() {
-    let currentStep = this.state.currentStep;
-
-    // If the current step is the last step, then render the "submit" button
-    if (currentStep >= 4) {
-      return <Button color="primary">Submit</Button>;
-    }
-    // ...else render nothing
-    return null;
-  }
-
-  render() {
-    return (
-      <>
-        <Form>
-          <Card>
-            <Card.Body>
-              <Card.Title>
-                <MultiStepProgressBar currentStep={this.state.currentStep} />
-              </Card.Title>
-              <Card.Text />
-              <Step1
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                email={this.state.email}
-              />
-              <Step2
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                email={this.state.username}
-              />
-              <Step3
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                email={this.state.password}
-              />
-              <Step4
-                currentStep={this.state.currentStep}
-                handleChange={this.handleChange}
-                email={this.state.name}
-              />
-            </Card.Body>
-            <Card.Footer>
-              {this.previousButton}
-              {this.nextButton}
-              {this.submitButton}
-            </Card.Footer>
-          </Card>
-        </Form>
-      </>
-    );
-  }
-}
-
+  return (
+    <Card>
+      <Card.Header className="cardHeader">
+        <Row className="justify-content-around mx-auto">
+          <Col className="d-flex justify-content-around">
+            <Card.Title>
+              Personal <br /> Information
+            </Card.Title>
+          </Col>
+          <Col className="d-flex justify-content-around">
+            <Card.Title>
+              Financial <br /> Information
+            </Card.Title>
+          </Col>
+          <Col className="d-flex justify-content-around">
+            <Card.Title>
+              Policy <br /> Riders
+            </Card.Title>
+          </Col>
+          <Col className="d-flex justify-content-around">
+            <Card.Title>Illustration</Card.Title>
+          </Col>
+        </Row>
+        <Card.Title>
+          <MultiStepProgressBar currentStep={step} />
+        </Card.Title>
+      </Card.Header>
+      <Card.Body>{FindView(step)}</Card.Body>
+    </Card>
+  );
+};
 export default MasterForm;

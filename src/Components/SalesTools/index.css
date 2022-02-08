@@ -120,6 +120,12 @@
 .--lida-sales-tab-header > div:nth-child(4) {
   left: 785%;
 }
+.display-right{
+  float: right;
+}
+.display-left{
+  float: left;
+}
 .btn-warning.btn-md {
   font-size: 20px;
   text-transform: uppercase;
@@ -136,7 +142,7 @@
   background: white;
   color: #eb7600;
   border-radius: 25px;
-  margin-left: 30px;
+  margin: 0px 10px;
 }
 .--lida-sales-footer {
   float: right;
