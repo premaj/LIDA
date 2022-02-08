@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import FormInput from "./formInput";
 import "./index.css";
+import MasterForm from "./MasterForm";
 
 function SalesTools() {
   return (
@@ -24,7 +24,7 @@ function SalesTools() {
           </Col>
         </Row>
         <Row>
-          <FormInput></FormInput>
+          <MasterForm/>
         </Row>
       </Container>
     </div>

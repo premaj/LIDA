@@ -36,14 +36,16 @@ import Policy from "./policy";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
+
   // table inital data
   const [tableValue, setTableValue] = useState([...jsonData]);
 
   // buttonGroup variables defined
   const [checked, setChecked] = useState(true);
+
   const [buttonValue, setButtonValue] = useState("All");
 
-  // filter data onclick search button 
+  // filter data onclick search button
   const [searchTerm, setSearchTerm] = React.useState("");
 
   // handleButtonClick for filter data using button
@@ -53,46 +55,52 @@ function MyDashboard() {
     { name: "Inforced", value: "Inforced" },
     { name: "Declined", value: "Declined" },
   ];
+
   const handleButtonClick = (name) => {
     setButtonValue(name);
     FilterTabledata(name);
   };
 
-  // filter table data using button click
-  const FilterTabledata = (name) => {
-    if (name === "All") {
+  const FilterTabledata = (name, filterKeyword) => {
+    if (name === "All" && (!filterKeyword || filterKeyword.trim() === "")) {
       return tableValue;
-    } else if (name === "Referred") {
+    } else if (
+      name === "Referred" &&
+      (!filterKeyword || filterKeyword.trim() === "")
+    ) {
       const filterItem = tableValue.filter((item) => {
         return item.Status === "New";
       });
       return filterItem;
-    } else if (name === "Inforced") {
+    } else if (
+      name === "Inforced" &&
+      (!filterKeyword || filterKeyword.trim() === "")
+    ) {
       const filterItem = tableValue.filter((item) => {
         return item.Status === "Complete";
       });
       return filterItem;
-    } else if (name === "Declined") {
+    } else if (
+      name === "Declined" &&
+      (!filterKeyword || filterKeyword.trim() === "")
+    ) {
       const filterItem = tableValue.filter((item) => {
         return item.Status === "On Hold";
       });
       return filterItem;
+    } else if (filterKeyword !== "") {
+      console.log(filterKeyword);
+      return tableValue.filter((item) => {
+        return item.Client.toLowerCase().includes(filterKeyword.toLowerCase());
+      });
     }
   };
 
-  // filter data onclick search button 
-  const handleSearch = event => {
-    if(event !== ""){
-     setSearchTerm(event.target.value);
+  const handleSearch = (event) => {
+    if (event !== "") {
+      setSearchTerm(event.target.value);
     }
-   };
-  React.useEffect(() => {
-     const results = tableValue.filter(item =>
-      item.Client.toLowerCase().includes(searchTerm.toLowerCase())
-     );
-     setTableValue(results);
-   }, [searchTerm]);
-
+  };
 
   return (
     <div>
@@ -218,18 +226,31 @@ function MyDashboard() {
                         onChange={handleSearch}
                       />
                       <InputGroup.Text id="btnGroupAddon" className="orange">
-                      <Icons.Search className="ms-1" size={24}/>
+                        <Icons.Search className="ms-1" size={24} />
                       </InputGroup.Text>
                     </InputGroup>
                     <div className="pagination-box">
-                       <span className="pagination-text">15</span>
-                       <span>of 45 records</span>
+                      {/* <span className="pagination-text">15</span> */}
+                      <Form.Select className="pagination-text">
+                        <option value="10" selected>
+                          10
+                        </option>
+                        <option value="15" selected>
+                          15
+                        </option>
+                        <option value="20" selected>
+                          20
+                        </option>
+                      </Form.Select>
+                      <span>of 45 records</span>
                     </div>
                   </ButtonToolbar>
                 </div>
                 <Row>
                   <Col>
-                    <ClientTable data={FilterTabledata(buttonValue)} />
+                    <ClientTable
+                      data={FilterTabledata(buttonValue, searchTerm)}
+                    />
                   </Col>
                 </Row>
               </Col>

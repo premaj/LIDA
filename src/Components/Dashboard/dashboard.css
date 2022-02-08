@@ -457,7 +457,8 @@ span.--lida-dashboard-myincentives-header,h3.premium-title,.commission .title {
 .pagination-text{
   border: 1px solid #000;
     margin: 0 5px !important;
-    padding: 0px 4px;
+    padding: 0px 5px;
+    width: 60px;
 }
 .filter-btn-width{
   width: fit-content;
