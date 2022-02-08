@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./dashboard.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -34,18 +34,19 @@ import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
 import Policy from "./policy";
 import { PolicyProvider } from "../ContextApi/PolicyDataProvider";
+import { customizeDashboardContext } from "../ContextApi/CustomizeDashBoardContext";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
   // table inital data
   const [tableValue, setTableValue] = useState([...jsonData]);
-
+  const dashBoardWidget = useContext(customizeDashboardContext);
   // buttonGroup variables defined
   const [checked, setChecked] = useState(true);
 
   const [buttonValue, setButtonValue] = useState("All");
-  //select by year filter for policy 
-  const [policyYear, SetPolicyYear] = useState('2021');
+  //select by year filter for policy
+  const [policyYear, SetPolicyYear] = useState("2021");
 
   // filter data onclick search button
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -153,149 +154,171 @@ function MyDashboard() {
 
             {/* Policies and next Premium Due */}
             <Row>
-              <Col>
-                <div className="dashboard-widget min-height-380">
-                  {/* <h3 className="widget-heading">Policies</h3> */}
-                  <div>
-                    <span className="--lida-dashboard-myincentives-header">
-                      Policies
-                    </span>
-
-                    <span className="--lida-dashboard-myincentives-header-right">
-                      <span className="policy-header-right-text">For</span>
-                      <span style={{marginRight:'1.0rem'}}>
-                        <select onChange={PolicyYearOnChange}>
-                          <option value="2021" selected>2021</option>
-                          <option value="2022">2022</option>
-                        </select>
+              {dashBoardWidget.widgets.policies && (
+                <Col>
+                  <div className="dashboard-widget min-height-380">
+                    {/* <h3 className="widget-heading">Policies</h3> */}
+                    <div>
+                      <span className="--lida-dashboard-myincentives-header">
+                        Policies
                       </span>
-                      <span>...</span>
-                    </span>
+
+                      <span className="--lida-dashboard-myincentives-header-right">
+                        <span className="policy-header-right-text">For</span>
+                        <span style={{ marginRight: "1.0rem" }}>
+                          <select onChange={PolicyYearOnChange}>
+                            <option value="2021" selected>
+                              2021
+                            </option>
+                            <option value="2022">2022</option>
+                          </select>
+                        </span>
+                        <span>...</span>
+                      </span>
+                    </div>
+                    <PolicyProvider>
+                      <Policy policyYear={policyYear} />
+                    </PolicyProvider>
                   </div>
-                  <PolicyProvider>
-                    <Policy policyYear={policyYear} />
-                  </PolicyProvider>
-                </div>
-              </Col>
-              <Col>
-                <div className="dashboard-widget min-height-380">
-                  <NextPremiumsDue />
-                </div>
-              </Col>
+                </Col>
+              )}
+              {dashBoardWidget.widgets.nextPremiumDue && (
+                <Col>
+                  <div className="dashboard-widget min-height-380">
+                    <NextPremiumsDue />
+                  </div>
+                </Col>
+              )}
             </Row>
 
             {/* My incentives and My commisions */}
             <Row>
-              <Col>
-                <div className="dashboard-widget min-height-380">
-                  <div>
-                    <span className="--lida-dashboard-myincentives-header">
-                      My Incentives
-                    </span>
-                    <span className="--lida-dashboard-myincentives-header-right">
-                      ...
-                    </span>
-                  </div>
+              {dashBoardWidget.widgets.myIncentives && (
+                <Col>
+                  <div className="dashboard-widget min-height-380">
+                    <div>
+                      <span className="--lida-dashboard-myincentives-header">
+                        My Incentives
+                      </span>
+                      <span className="--lida-dashboard-myincentives-header-right">
+                        ...
+                      </span>
+                    </div>
 
-                  <MyIncentives />
-                </div>
-              </Col>
-              <Col>
-                <div className="dashboard-widget min-height-380">
-                  <MyCommissions />
-                </div>
-              </Col>
+                    <MyIncentives />
+                  </div>
+                </Col>
+              )}
+              {dashBoardWidget.widgets.myCommision && (
+                <Col>
+                  <div className="dashboard-widget min-height-380">
+                    <MyCommissions />
+                  </div>
+                </Col>
+              )}
             </Row>
 
             {/* My Workspace */}
             <Row>
-              <Col>
-                <div className="dashboard-widget">
-                  <h3 className="widget-heading">
-                    My Workspace <span>...</span>
-                  </h3>
-                  <ButtonToolbar className="justify-content-between mt-4">
-                    <ButtonGroup>
-                      {buttonGroups.map((item, index) => (
-                        <ToggleButton
-                          key={index}
-                          id={`item-${index}`}
-                          type="radio"
-                          variant="outline-primary"
-                          name={item.name}
-                          value={item.value}
-                          checked={buttonValue === item.value}
-                          onChange={(e) =>
-                            handleButtonClick(e.currentTarget.value)
-                          }
-                          className="filter-btn-width"
-                        >
-                          {item.name}
-                        </ToggleButton>
-                      ))}
-                    </ButtonGroup>
-                    <InputGroup>
-                      <FormControl
-                        type="text"
-                        value={searchTerm}
-                        onChange={handleSearch}
+              {dashBoardWidget.widgets.myWorkspace && (
+                <Col>
+                  <div className="dashboard-widget">
+                    <h3 className="widget-heading">
+                      My Workspace <span>...</span>
+                    </h3>
+                    <ButtonToolbar className="justify-content-between mt-4">
+                      <ButtonGroup>
+                        {buttonGroups.map((item, index) => (
+                          <ToggleButton
+                            key={index}
+                            id={`item-${index}`}
+                            type="radio"
+                            variant="outline-primary"
+                            name={item.name}
+                            value={item.value}
+                            checked={buttonValue === item.value}
+                            onChange={(e) =>
+                              handleButtonClick(e.currentTarget.value)
+                            }
+                            className="filter-btn-width"
+                          >
+                            {item.name}
+                          </ToggleButton>
+                        ))}
+                      </ButtonGroup>
+                      <InputGroup>
+                        <FormControl
+                          type="text"
+                          value={searchTerm}
+                          onChange={handleSearch}
+                        />
+                        <InputGroup.Text id="btnGroupAddon" className="orange">
+                          <Icons.Search className="ms-1" size={24} />
+                        </InputGroup.Text>
+                      </InputGroup>
+                      <div className="pagination-box">
+                        {/* <span className="pagination-text">15</span> */}
+                        <Form.Select className="pagination-text">
+                          <option value="10" selected>
+                            10
+                          </option>
+                          <option value="15" selected>
+                            15
+                          </option>
+                          <option value="20" selected>
+                            20
+                          </option>
+                        </Form.Select>
+                        <span>of 45 records</span>
+                      </div>
+                    </ButtonToolbar>
+                  </div>
+                  <Row>
+                    <Col>
+                      <ClientTable
+                        data={FilterTabledata(buttonValue, searchTerm)}
                       />
-                      <InputGroup.Text id="btnGroupAddon" className="orange">
-                        <Icons.Search className="ms-1" size={24} />
-                      </InputGroup.Text>
-                    </InputGroup>
-                    <div className="pagination-box">
-                      {/* <span className="pagination-text">15</span> */}
-                      <Form.Select className="pagination-text">
-                        <option value="10" selected>
-                          10
-                        </option>
-                        <option value="15" selected>
-                          15
-                        </option>
-                        <option value="20" selected>
-                          20
-                        </option>
-                      </Form.Select>
-                      <span>of 45 records</span>
-                    </div>
-                  </ButtonToolbar>
-                </div>
-                <Row>
-                  <Col>
-                    <ClientTable
-                      data={FilterTabledata(buttonValue, searchTerm)}
-                    />
-                  </Col>
-                </Row>
-              </Col>
+                    </Col>
+                  </Row>
+                </Col>
+              )}
             </Row>
           </Col>
           <Col md={3} lg={3} sm={3}>
             <Row>
-              <Col>
-                <Alerts />
-              </Col>
+              {dashBoardWidget.widgets.alerts && (
+                <Col>
+                  <Alerts />
+                </Col>
+              )}
             </Row>
             <Row>
-              <Col>
-                <Claims />
-              </Col>
+              {dashBoardWidget.widgets.claims && (
+                <Col>
+                  <Claims />
+                </Col>
+              )}
             </Row>
             <Row>
-              <Col>
-                <MyTools />
-              </Col>
+              {dashBoardWidget.widgets.myTools && (
+                <Col>
+                  <MyTools />
+                </Col>
+              )}
             </Row>
             <Row>
-              <Col>
-                <MyResearchArea />
-              </Col>
+              {dashBoardWidget.widgets.myReasearchArea && (
+                <Col>
+                  <MyResearchArea />
+                </Col>
+              )}
             </Row>
             <Row>
-              <Col>
-                <MyReports />
-              </Col>
+              {dashBoardWidget.widgets.myReports && (
+                <Col>
+                  <MyReports />
+                </Col>
+              )}
             </Row>
           </Col>
         </Row>
