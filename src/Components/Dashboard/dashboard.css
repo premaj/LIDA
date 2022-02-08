@@ -283,6 +283,16 @@ h4.mytools a span svg {
   display: flex;
   
 }
+
+.policy-header-right-text{
+  font-family: Helvetica;
+margin-right: 1rem;
+letter-spacing: 0;
+margin-top:4px;
+font-size:20px;
+color:#3a3e41;
+
+}
 .--lida-dashboard-myincentives-body {
   margin-top: 20px;
 }

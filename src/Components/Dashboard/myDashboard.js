@@ -44,6 +44,8 @@ function MyDashboard() {
   const [checked, setChecked] = useState(true);
 
   const [buttonValue, setButtonValue] = useState("All");
+  //select by year filter for policy 
+  const [policyYear, SetPolicyYear] = useState('2021');
 
   // filter data onclick search button
   const [searchTerm, setSearchTerm] = React.useState("");
@@ -96,6 +98,9 @@ function MyDashboard() {
     }
   };
 
+  const PolicyYearOnChange = (event) => {
+    SetPolicyYear(event.target.value);
+  };
   const handleSearch = (event) => {
     if (event !== "") {
       setSearchTerm(event.target.value);
@@ -157,17 +162,18 @@ function MyDashboard() {
                     </span>
 
                     <span className="--lida-dashboard-myincentives-header-right">
-                      <span >
-                        <select>
-                          <option>2021</option>
-                          <option>2022</option>
+                      <span className="policy-header-right-text">For</span>
+                      <span style={{marginRight:'1.0rem'}}>
+                        <select onChange={PolicyYearOnChange}>
+                          <option value="2021" selected>2021</option>
+                          <option value="2022">2022</option>
                         </select>
                       </span>
-                     <span>...</span> 
+                      <span>...</span>
                     </span>
                   </div>
                   <PolicyProvider>
-                    <Policy />
+                    <Policy policyYear={policyYear} />
                   </PolicyProvider>
                 </div>
               </Col>

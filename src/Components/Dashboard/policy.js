@@ -5,12 +5,16 @@ import { Col, Row, ProgressBar } from "react-bootstrap";
 
 import "./dashboard.css";
 
-function Policy() {
+function Policy(props) {
   const contextpolicy = useContext(PolicyContext);
+  const { policyYear } = props;
+ //filtering the data as per the policy year.
+  const dataFilterByYear = contextpolicy.policy.filter(
+    (item) => item.year === policyYear
+  );
 
-  console.log(contextpolicy.policy);
+  console.log(dataFilterByYear);
 
-  
   var options = {
     colors: ["#52B69A", "#B5E48C", "#1E6091", "#34A0A4"],
     dataLabels: {
@@ -114,21 +118,21 @@ function Policy() {
         <Chart
           series={[
             {
-              name: contextpolicy.policy[0].policyName,
-              data: contextpolicy.policy[0].Data,
+              name: dataFilterByYear[0]?.policyName,
+              data: dataFilterByYear[0]?.Data,
               fillColor: "#52B69A",
             },
             {
-              name: contextpolicy.policy[1].policyName,
-              data: contextpolicy.policy[1].Data,
+              name: dataFilterByYear[1]?.policyName,
+              data: contextpolicy.policy[1]?.Data,
             },
             {
-              name: contextpolicy.policy[2].policyName,
-              data: contextpolicy.policy[2].Data,
+              name: dataFilterByYear[2]?.policyName,
+              data: contextpolicy.policy[2]?.Data,
             },
             {
-              name: contextpolicy.policy[3].policyName,
-              data: contextpolicy.policy[3].Data,
+              name: dataFilterByYear[3]?.policyName,
+              data: dataFilterByYear[3]?.Data,
             },
           ]}
           options={options}
