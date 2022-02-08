@@ -126,7 +126,7 @@
 .display-left{
   float: left;
 }
-.btn-warning.btn-md {
+form .btn-warning.btn-md {
   font-size: 20px;
   text-transform: uppercase;
   color: #fff;
@@ -136,7 +136,7 @@
   background-color: #eb7600;
   border-color: #eb7600;
 }
-.btn-warning.btn-md span svg {
+form .btn-warning.btn-md span svg {
   width: 20px;
   height: 20px;
   background: white;
