@@ -52,7 +52,7 @@ function MyIncentives() {
             <div>
               <Row>
                 <Col lg={1} md={1}>
-                  <div className="list-circle l1"></div>
+                  <div className="list-circle"></div>
                 </Col>
                 <Col>Universal Life</Col>
                 <Col lg={2} md={2}>

@@ -280,6 +280,8 @@ h4.mytools a span svg {
   color: #808495;
   position: relative;
   bottom: 10px;
+  display: flex;
+  
 }
 .--lida-dashboard-myincentives-body {
   margin-top: 20px;
@@ -325,6 +327,14 @@ h4.mytools a span svg {
   border: 3px solid;
   position: relative;
   top: 1px;
+}
+.legend-circles{
+  width:10px !important;
+  height: 10px !important;
+  margin:2px !important;
+  background-color: white !important;
+
+
 }
 .l1 {
   border-color: #1e6091;

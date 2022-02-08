@@ -1,18 +1,42 @@
-
-import React from "react";
+import React, { useContext } from "react";
 import Chart from "react-apexcharts";
+import { PolicyContext } from "../ContextApi/PolicyDataProvider";
 import { Col, Row, ProgressBar } from "react-bootstrap";
 
 import "./dashboard.css";
 
 function Policy() {
+  const contextpolicy = useContext(PolicyContext);
+
+  console.log(contextpolicy.policy);
+
+  
   var options = {
     colors: ["#52B69A", "#B5E48C", "#1E6091", "#34A0A4"],
     dataLabels: {
       enabled: false,
     },
+
     legend: {
-      show: false,
+      show: true,
+      showForSingleSeries: true,
+
+      position: "bottom",
+      horizontalAlign: "center",
+      markers: {
+        width: 15,
+        height: 15,
+        strokeWidth: 0,
+        strokeColor: "#fff",
+        fillColors: undefined,
+        radius: 15,
+        customHTML: function () {
+          return '<div className="legend-circles" style=" width:9px;border-radius:10px;height: 9px !important;margin:3px 5px 3px 3px; background-color: white !important;"></div>';
+        },
+        onClick: undefined,
+        offsetX: 0,
+        offsetY: 0,
+      },
     },
     yaxis: {
       axisBorder: {
@@ -22,7 +46,7 @@ function Policy() {
         show: false,
       },
       labels: {
-        show: false,
+        show: true,
       },
     },
     chart: {
@@ -63,10 +87,7 @@ function Policy() {
         "Dec",
       ],
     },
-    legend: {
-      position: "bottom",
-      offsetY: 40,
-    },
+
     fill: {
       color: ["#52B69A", "#B5E48C", "#1E6091", "#34A0A4"],
       opacity: 1,
@@ -93,21 +114,21 @@ function Policy() {
         <Chart
           series={[
             {
-              name: "PRODUCT A",
-              data: [44, 55, 41, 67, 22, 0, 0, 0, 0, 0, 0, 0, 0],
+              name: contextpolicy.policy[0].policyName,
+              data: contextpolicy.policy[0].Data,
               fillColor: "#52B69A",
             },
             {
-              name: "PRODUCT B",
-              data: [13, 23, 20, 8, 13, 0, 0, 0, 0, 0, 0, 0, 0],
+              name: contextpolicy.policy[1].policyName,
+              data: contextpolicy.policy[1].Data,
             },
             {
-              name: "PRODUCT C",
-              data: [11, 17, 15, 15, 21, 0, 0, 0, 0, 0, 0, 0, 0],
+              name: contextpolicy.policy[2].policyName,
+              data: contextpolicy.policy[2].Data,
             },
             {
-              name: "PRODUCT D",
-              data: [21, 7, 25, 13, 22, 0, 0, 0, 0, 0, 0, 0, 0],
+              name: contextpolicy.policy[3].policyName,
+              data: contextpolicy.policy[3].Data,
             },
           ]}
           options={options}

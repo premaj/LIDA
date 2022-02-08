@@ -33,10 +33,10 @@ import NextPremiumsDue from "../NextPremiumsDue";
 import MyCommissions from "../MyCommissions";
 import MyResearchArea from "./myResearchArea";
 import Policy from "./policy";
+import { PolicyProvider } from "../ContextApi/PolicyDataProvider";
 library.add(fab, faCheckSquare, faCoffee, faEnvelope, faPhoneAlt);
 
 function MyDashboard() {
-
   // table inital data
   const [tableValue, setTableValue] = useState([...jsonData]);
 
@@ -155,11 +155,20 @@ function MyDashboard() {
                     <span className="--lida-dashboard-myincentives-header">
                       Policies
                     </span>
+
                     <span className="--lida-dashboard-myincentives-header-right">
-                      ...
+                      <span >
+                        <select>
+                          <option>2021</option>
+                          <option>2022</option>
+                        </select>
+                      </span>
+                     <span>...</span> 
                     </span>
                   </div>
-                  <Policy />
+                  <PolicyProvider>
+                    <Policy />
+                  </PolicyProvider>
                 </div>
               </Col>
               <Col>
