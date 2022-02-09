@@ -24,7 +24,7 @@ function SalesTools() {
           </Col>
         </Row>
         <Row>
-          <MasterForm/>
+          <MasterForm />
         </Row>
       </Container>
     </div>

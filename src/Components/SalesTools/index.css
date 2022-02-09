@@ -120,7 +120,13 @@
 .--lida-sales-tab-header > div:nth-child(4) {
   left: 785%;
 }
-.btn-warning.btn-md {
+.display-right{
+  float: right;
+}
+.display-left{
+  float: left;
+}
+form .btn-warning.btn-md {
   font-size: 20px;
   text-transform: uppercase;
   color: #fff;
@@ -130,13 +136,13 @@
   background-color: #eb7600;
   border-color: #eb7600;
 }
-.btn-warning.btn-md span svg {
+form .btn-warning.btn-md span svg {
   width: 20px;
   height: 20px;
   background: white;
   color: #eb7600;
   border-radius: 25px;
-  margin-left: 30px;
+  margin: 0px 10px;
 }
 .--lida-sales-footer {
   float: right;
