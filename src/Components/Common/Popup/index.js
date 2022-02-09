@@ -1,4 +1,4 @@
-import React, {useContext}from "react";
+import React, { useContext } from "react";
 import { Modal, Container, Row, Col, Button } from "react-bootstrap";
 import "./index.css";
 import Checkbox from "../Checkbox";
@@ -82,35 +82,90 @@ const Popup = (props) => {
               <h4>Widgets</h4>
               <Row>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="Policies"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="Next Premium Due"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="Alerts"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
               </Row>
               <Row>
-                <Col xs={12} md={12} size="sm" className="m-2">
-                  <Button variant="secondary" className="btn-add ml-auto">
-                    Add New Widget
-                  </Button>
+                <Col xs={6} md={4}>
+                  <Checkbox
+                    title="Claims"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
+                </Col>
+                <Col xs={6} md={4}>
+                  <Checkbox
+                    title="My Commissions"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
+                </Col>
+                <Col xs={6} md={4}>
+                  <Checkbox
+                    title="My Incentives"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
               </Row>
-            </div>
-            <hr />
-            <div className="modal-section-wrapper">
-              <h4>Features</h4>
               <Row>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="My Tools"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="My Workspace"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
                 <Col xs={6} md={4}>
-                  <Checkbox title="My Dashboard" icon="Speedometer" />
+                  <Checkbox
+                    title="My Research Area"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={6} md={4}>
+                  <Checkbox
+                    title="My Reports"
+                    icon="Speedometer"
+                    contextProviderData={customizeDashboardC.widgets}
+                    contextProviderSetData={customizeDashboardC.setWidget}
+                  />
                 </Col>
               </Row>
             </div>
